@@ -1,6 +1,21 @@
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(technologies, name) {
+  if (technologies.length === 0) {
+    return 'Vazio!';
+  } else {
+  let object = {};
+  let result = [];
+  let ordered = technologies.sort();
+
+  for (let item of ordered) {
+    object['tech'] = item;
+    object['name'] = name;
+    result.push(object);
+    object = {};
+  }
+
+  return result;
+  }
 }
 
 // Desafio 11
@@ -24,3 +39,9 @@ module.exports = {
   hydrate,
   triangleCheck,
 };
+
+
+
+
+
+

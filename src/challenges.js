@@ -13,17 +13,15 @@ function calcArea(base, height) {
 
 // Desafio 3
 function splitSentence(sentence) {
-  
-  let word = "";
+  let word = '';
   let split = [];
 
   for (let index = 0; index < sentence.length; index += 1) {
-
-    if (sentence[index] !== " ") {
+    if (sentence[index] !== ' ') {
       word = word + sentence[index];
     } else {
       split.push(word);
-      word = "";
+      word = '';
     }
   }
   
@@ -34,14 +32,13 @@ function splitSentence(sentence) {
 
 // Desafio 4
 function concatName(names) {
-
   let lastPosition = names.length - 1;
 
   let first = names[0];
 
   let last = names[lastPosition];
 
-  return last + ", " + first;
+  return last + ', ' + first;
   
 }
 
@@ -53,7 +50,6 @@ function footballPoints(wins, ties) {
 
 // Desafio 6
 function highestCount(numbers) {
-
   let highest = numbers[0]
   
   for (let index = 1; index < numbers.length; index += 1) {
@@ -92,33 +88,28 @@ function catAndMouse(mouse, cat1, cat2) {
   }
 
   if (distance2 > distance1){
-    return "cat1";
+    return 'cat1';
   } else if(distance1 > distance2){
-    return "cat2";
-  } else {
-    return "os gatos trombam e o rato foge";
-  }
+    return 'cat2';
+  } return 'os gatos trombam e o rato foge';
 }
 
 // Desafio 8
 function fizzBuzz(numbers) {
-
   let result = [];
 
   for (num of numbers) {
-    
     if (num % 3 === 0) {
       if (num % 5 === 0){
-        result.push("fizzBuzz");
+        result.push('fizzBuzz');
       } else {
-        result.push("fizz");
+        result.push('fizz');
       }
     } else if (num % 5 === 0){
-      result.push("buzz");
+      result.push('buzz');
     } else {
-      result.push("bug!");
+      result.push('bug!');
     }
-
   }
   
   return result;
@@ -126,25 +117,24 @@ function fizzBuzz(numbers) {
 
 // Desafio 9
 function encode(text) {
-  let coded = "";
+  let coded = '';
 
   for (let letter of text) {
-    
     switch (letter) {
-      case "a":
-        letter = "1";
+      case 'a':
+        letter = '1';
         break;
-      case "e":
-        letter = "2";
+      case 'e':
+        letter = '2';
         break;
-      case "i":
-        letter = "3";
+      case 'i':
+        letter = '3';
         break;
-      case "o":
-        letter = "4";
+      case 'o':
+        letter = '4';
         break;
-      case "u":
-        letter = "5";
+      case 'u':
+        letter = '5';
         break;
     }
     coded = coded + letter;
@@ -153,26 +143,24 @@ function encode(text) {
   return coded;
 }
 function decode(text) {
-
-  let decoded = "";
+  let decoded = '';
 
   for (let letter of text) {
-    
     switch (letter) {
-      case "1":
-        letter = "a";
+      case '1':
+        letter = 'a';
         break;
-      case "2":
-        letter = "e";
+      case '2':
+        letter = 'e';
         break;
-      case "3":
-        letter = "i";
+      case '3':
+        letter = 'i';
         break;
-      case "4":
-        letter = "o";
+      case '4':
+        letter = 'o';
         break;
-      case "5":
-        letter = "u";
+      case '5':
+        letter = 'u';
         break;
     }
     decoded = decoded + letter;
