@@ -105,10 +105,8 @@ function fizzBuzz(numbers) {
 
   let result = [];
 
-  for (let index = 0; index < numbers.length; index +=1) {
+  for (num of numbers) {
     
-    let num = numbers[index];
-
     if (num % 3 === 0) {
       if (num % 5 === 0){
         result.push("fizzBuzz");
@@ -127,13 +125,63 @@ function fizzBuzz(numbers) {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(text) {
+  let coded = "";
+
+  for (let letter of text) {
+    
+    switch (letter) {
+      case "a":
+        letter = "1";
+        break;
+      case "e":
+        letter = "2";
+        break;
+      case "i":
+        letter = "3";
+        break;
+      case "o":
+        letter = "4";
+        break;
+      case "u":
+        letter = "5";
+        break;
+    }
+    coded = coded + letter;
+  }
+
+  return coded;
 }
-function decode() {
-  // seu código aqui
+function decode(text) {
+
+  let decoded = "";
+
+  for (let letter of text) {
+    
+    switch (letter) {
+      case "1":
+        letter = "a";
+        break;
+      case "2":
+        letter = "e";
+        break;
+      case "3":
+        letter = "i";
+        break;
+      case "4":
+        letter = "o";
+        break;
+      case "5":
+        letter = "u";
+        break;
+    }
+    decoded = decoded + letter;
+  }
+
+  return decoded;
 }
 
+       
 module.exports = {
   calcArea,
   catAndMouse,
