@@ -19,9 +19,32 @@ function techList(technologies, name) {
 }
 
 // Desafio 11
-function generatePhoneNumber() {
-  // seu código aqui
+function numberCounter(number) {
+  for (let index = 0; index = 10; index += 1) {
+    let counter = 0;
+    let currentNum = number[index];
+
+    for (let num of number) {
+      if (num === currentNum) {
+       counter += 1;
+      }
+
+      if (counter > 2 | num < 0 | num > 9) {
+        return 'não é possível gerar um número de telefone com esses valores';
+      }
+    }
+  }
 }
+
+function generatePhoneNumber(numbers) {
+  if (numbers.length !== 11) {
+    return "Array com tamanho incorreto.";
+  } else {
+    numberCounter(numbers);
+
+    return '(' + numbers[0] + numbers[1] + ') ' + numbers[2] + numbers[3] + numbers[4] + numbers[5] + numbers[6] + '-' + numbers[7] + numbers[8] + numbers[9] + numbers[10];
+  }
+} 
 
 // Desafio 12
 function triangleCheck() {
