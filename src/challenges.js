@@ -13,14 +13,36 @@ function calcArea(base, height) {
 
 // Desafio 3
 function splitSentence(sentence) {
-  let split = [];
-  split.push(sentence);
   
+  let word = "";
+  let split = [];
+
+  for (let index = 0; index < sentence.length; index += 1) {
+
+    if (sentence[index] !== " ") {
+      word = word + sentence[index];
+    } else {
+      split.push(word);
+      word = "";
+    }
+  }
+  
+  split.push(word);
+
+  return split;
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(names) {
+
+  let lastPosition = names.length - 1;
+
+  let first = names[0];
+
+  let last = names[lastPosition];
+
+  return last + ", " + first;
+  
 }
 
 // Desafio 5
@@ -30,30 +52,48 @@ function footballPoints(wins, ties) {
 }
 
 // Desafio 6
-function highestCount() {
-  // seu código aqui
+function highestCount(numbers) {
+
+  let highest = numbers[0]
+  
+  for (let index = 1; index < numbers.length; index += 1) {
+    if (highest < numbers[index]) {
+      highest = numbers[index];
+    }
+  }
+
+  let counter = 0
+
+  for (index = 0; index < numbers.length; index += 1) {
+    if (highest === numbers[index]) {
+      counter += 1;
+    }
+  }
+
+  return counter; 
 }
+
 
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
-  let distancia1;
-  let distancia2;
+  let distance1;
+  let distance2;
 
   if(mouse > cat1){
-    distancia1 = mouse - cat1;
+    distance1 = mouse - cat1;
   } else {
-    distancia1 = cat1 - mouse;
+    distance1 = cat1 - mouse;
   }
   
   if(mouse > cat2){
-    distancia2 = mouse - cat2;
+    distance2 = mouse - cat2;
   } else {
-    distancia2 = cat2 - mouse;
+    distance2 = cat2 - mouse;
   }
 
-  if (distancia2 > distancia1){
+  if (distance2 > distance1){
     return "cat1";
-  } else if(distancia1 > distancia2){
+  } else if(distance1 > distance2){
     return "cat2";
   } else {
     return "os gatos trombam e o rato foge";
@@ -61,8 +101,29 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(numbers) {
+
+  let result = [];
+
+  for (let index = 0; index < numbers.length; index +=1) {
+    
+    let num = numbers[index];
+
+    if (num % 3 === 0) {
+      if (num % 5 === 0){
+        result.push("fizzBuzz");
+      } else {
+        result.push("fizz");
+      }
+    } else if (num % 5 === 0){
+      result.push("buzz");
+    } else {
+      result.push("bug!");
+    }
+
+  }
+  
+  return result;
 }
 
 // Desafio 9
