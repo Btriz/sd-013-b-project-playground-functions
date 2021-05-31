@@ -37,18 +37,33 @@ function generatePhoneNumber(numbers) {
       }
     }
     let phone = '(' + numbers[0] + numbers[1] + ') ' + numbers[2] + numbers[3] + numbers[4] + numbers[5] + numbers[6] + '-' + numbers[7] + numbers[8] + numbers[9] + numbers[10];
+
     return phone;
   }
 } 
 
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function triangleCheck(lineA, lineB, lineC) {
+  if (lineA < (lineB + lineC) & lineB < (lineA + lineC) & lineC < (lineA + lineB)) {
+    if (lineA > Math.abs(lineB - lineC) & lineB > Math.abs(lineA - lineC) & lineC > Math.abs(lineA - lineB)) {
+      return true;
+    }
+  } return false;
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(drinks) {
+// regular expression: \d significa que quero achar números, g (global flag) significa que quero todos
+  let reg = /\d/g; 
+  let numbers = drinks.match(reg);
+  let sum = 0;
+
+  for (let index = 0; index < numbers.length; index += 1) {
+    sum += parseInt(numbers[index]);
+  }
+  if (sum > 1) {
+    return sum + ' copos de água';
+  } return sum + ' copo de água';
 }
 
 module.exports = {
